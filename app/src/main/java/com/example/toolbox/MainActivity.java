@@ -6,19 +6,32 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.view.View.OnClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, CompoundButton.OnCheckedChangeListener {
+
+    Switch mySwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mySwitch = (Switch) findViewById(R.id.switch1);
+        mySwitch.setOnCheckedChangeListener(this);
+
+        //SPINNER CODE: https://www.tutorialspoint.com/android/android_spinner_control.htm
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
 
         // Spinner click listener
@@ -51,8 +64,98 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // Showing selected spinner item
         Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
     }
+
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
     }
+
+    public void onCheckbox1Clicked(View view) {
+        // Is the view now checked?
+        boolean checked = ((CheckBox) view).isChecked();
+        TextView textView = (TextView) findViewById(R.id.checkAnswer);
+        // Check which checkbox was clicked
+        switch (view.getId()) {
+            case R.id.checkBox1:
+                if (checked) {
+                    textView.setText("That's wrong! Try again!");
+                }
+        }
+
     }
+
+    public void onCheckbox2Clicked(View view) {
+        // Is the view now checked?
+        boolean checked = ((CheckBox) view).isChecked();
+        TextView textView = (TextView) findViewById(R.id.checkAnswer);
+        // Check which checkbox was clicked
+        switch (view.getId()) {
+            case R.id.checkBox2:
+                if (checked) {
+                    textView.setText("That's right! Great job!");
+                }
+        }
+
+    }
+
+    public void onCheckbox3Clicked(View view) {
+        // Is the view now checked?
+        boolean checked = ((CheckBox) view).isChecked();
+        TextView textView = (TextView) findViewById(R.id.checkAnswer);
+        // Check which checkbox was clicked
+        switch (view.getId()) {
+            case R.id.checkBox3:
+                if (checked) {
+                    textView.setText("That's wrong! Try again!");
+                }
+        }
+
+    }
+
+    public void radioButton1(View v) {
+        boolean checked = ((RadioButton) v).isChecked();
+        // Check which RadioButton was clicked
+        TextView view = (TextView) findViewById(R.id.checkAns);
+        switch (view.getId()) {
+            case R.id.radioButton:
+                if (checked)
+                    view.setText("That's wrong! Try again!");
+        }
+
+    }
+
+    public void radioButton2(View v) {
+        boolean checked = ((RadioButton) v).isChecked();
+        // Check which RadioButton was clicked
+        TextView view = (TextView) findViewById(R.id.checkAns);
+        switch (view.getId()) {
+            case R.id.radioButton2:
+                if (checked)
+                    view.setText("That's right! Great job!");
+        }
+    }
+
+    public void radioButton3(View v) {
+        boolean checked = ((RadioButton) v).isChecked();
+        // Check which RadioButton was clicked
+        TextView view = (TextView) findViewById(R.id.checkAns);
+        switch (view.getId()) {
+            case R.id.radioButton3:
+                if (checked)
+                    view.setText("That's wrong! Try again!");
+        }
+    }
+
+//https://stackoverflow.com/questions/11278507/android-widget-switch-on-off-event-listener
+
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        boolean isChecked = ((Switch) compoundButton).isChecked();
+        ImageView view = (ImageView) findViewById(R.id.imageView2);
+        if (isChecked)
+            view.setImageResource(R.drawable.gilbert_stuart_williamstown_portrait_of_george_washington_promo);
+        else
+            view.setImageResource(R.drawable.blank);
+
+    }
+}
 
