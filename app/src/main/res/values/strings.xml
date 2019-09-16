@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Toolbox</string>
     <string name="pres1">Abraham Lincoln</string>
-    <string name="pres2">George Washington</string>
+    <string name="pres2">Oprah Winfrey</string>
     <string name="pres3">Richard Nixon</string>
     <string name="spinner_title">Background Color</string>
 </resources>

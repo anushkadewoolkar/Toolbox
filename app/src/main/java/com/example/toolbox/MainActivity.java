@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ImageView view = (ImageView) findViewById(R.id.imageView2);
+        view.setImageResource(R.drawable.blank);
         mySwitch = (Switch) findViewById(R.id.switch1);
         mySwitch.setOnCheckedChangeListener(this);
 
@@ -77,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         switch (view.getId()) {
             case R.id.checkBox1:
                 if (checked) {
-                    textView.setText("That's wrong! Try again!");
+                    textView.setText("That's right! Great job!");
                 }
         }
 
@@ -91,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         switch (view.getId()) {
             case R.id.checkBox2:
                 if (checked) {
-                    textView.setText("That's right! Great job!");
+                    textView.setText("That's wrong! Try again!");
                 }
         }
 
@@ -105,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         switch (view.getId()) {
             case R.id.checkBox3:
                 if (checked) {
-                    textView.setText("That's wrong! Try again!");
+                    textView.setText("That's right! Great job!");
                 }
         }
 
@@ -114,11 +116,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void radioButton1(View v) {
         boolean checked = ((RadioButton) v).isChecked();
         // Check which RadioButton was clicked
-        TextView view = (TextView) findViewById(R.id.checkAns);
-        switch (view.getId()) {
+        TextView text = (TextView) findViewById(R.id.checkAns);
+        switch (v.getId()) {
             case R.id.radioButton:
                 if (checked)
-                    view.setText("That's wrong! Try again!");
+                    text.setText("That's wrong! Try again!");
         }
 
     }
@@ -126,22 +128,22 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void radioButton2(View v) {
         boolean checked = ((RadioButton) v).isChecked();
         // Check which RadioButton was clicked
-        TextView view = (TextView) findViewById(R.id.checkAns);
-        switch (view.getId()) {
+        TextView text = (TextView) findViewById(R.id.checkAns);
+        switch (v.getId()) {
             case R.id.radioButton2:
                 if (checked)
-                    view.setText("That's right! Great job!");
+                    text.setText("That's right! Great job!");
         }
     }
 
     public void radioButton3(View v) {
         boolean checked = ((RadioButton) v).isChecked();
         // Check which RadioButton was clicked
-        TextView view = (TextView) findViewById(R.id.checkAns);
-        switch (view.getId()) {
+        TextView text = (TextView) findViewById(R.id.checkAns);
+        switch (v.getId()) {
             case R.id.radioButton3:
                 if (checked)
-                    view.setText("That's wrong! Try again!");
+                    text.setText("That's wrong! Try again!");
         }
     }
 
@@ -155,6 +157,34 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             view.setImageResource(R.drawable.gilbert_stuart_williamstown_portrait_of_george_washington_promo);
         else
             view.setImageResource(R.drawable.blank);
+
+    }
+
+    public void calculateScore(View v)
+    {
+        TextView text = (TextView) findViewById(R.id.checkAns);
+        TextView textView = (TextView) findViewById(R.id.checkAnswer);
+        TextView score = (TextView) findViewById(R.id.score);
+        if (text.equals("That's right! Great job!") && textView.equals("That's right! Great job!"))
+        {
+            score.setText("You got 100%!!!");
+        }
+        else if (text.equals("That's wrong! Try again!") && textView.equals("That's right! Great job!"))
+        {
+            score.setText("You got 50%! Better luck next time!");
+        }
+        else if (text.equals("That's right! Great job!") && textView.equals("That's wrong! Try again!"))
+        {
+            score.setText("You got 50%! Better luck next time!");
+        }
+        else if (text.equals("That's wrong! Try again!") && textView.equals("That's wrong! Try again!"))
+        {
+            score.setText("You got 0%! Yikes!");
+        }
+        else
+        {
+            score.setText("You didn't answer one or more questions.");
+        }
 
     }
 }

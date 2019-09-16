@@ -71,44 +71,37 @@
         app:layout_constraintVertical_bias="0.364"
         app:srcCompat="@drawable/gilbert_stuart_williamstown_portrait_of_george_washington_promo" />
 
-    <RadioButton
-        android:id="@+id/radioButton"
-        android:layout_width="200dp"
-        android:layout_height="32dp"
-        android:text="Barack Obama"
-        android:onClick="radioButton1"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <RadioGroup
+        android:layout_width="206dp"
+        android:layout_height="123dp"
+        app:layout_constraintBottom_toBottomOf="@+id/score"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.679" />
+        app:layout_constraintTop_toTopOf="@+id/spinner"
+        app:layout_constraintVertical_bias="0.775">
 
-    <RadioButton
-        android:id="@+id/radioButton2"
-        android:layout_width="200dp"
-        android:layout_height="31dp"
-        android:text="Donald trump"
-        android:onClick="radioButton2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.724" />
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:onClick="radioButton3"
+            android:text="Bill Clinton" />
 
-    <RadioButton
-        android:id="@+id/radioButton3"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:text="Bill Clinton"
-        android:onClick="radioButton3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.778" />
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:onClick="radioButton2"
+            android:text="Donald trump" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:onClick="radioButton1"
+            android:text="Barack Obama" />
+    </RadioGroup>
 
     <Spinner
         android:id="@+id/spinner"
@@ -162,7 +155,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="First president of the U.S"
+        android:text="Past presidents of the U.S"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -182,7 +175,7 @@
         app:layout_constraintHorizontal_bias="0.323"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.611" />
+        app:layout_constraintVertical_bias="0.596" />
 
     <TextView
         android:id="@+id/checkAnswer"
@@ -190,10 +183,10 @@
         android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52" />
+        app:layout_constraintVertical_bias="0.516" />
 
     <Button
         android:id="@+id/button"
@@ -201,6 +194,7 @@
         android:layout_height="80dp"
         android:background="@drawable/images"
         android:text="DISPLAY SCORE"
+        android:onClick="calculateScore"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.039"
@@ -214,8 +208,20 @@
         android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/spinner"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintVertical_bias="0.874" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="160dp"
+        android:layout_height="57dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
