@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -9,96 +10,94 @@
 
     <CheckBox
         android:id="@+id/checkBox1"
-        android:layout_width="175dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="@dimen/checkbox_layout_width"
+        android:layout_height="@dimen/checkbox_layout_height"
+        android:layout_marginStart="@dimen/margin"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginEnd="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
         android:text="@string/pres1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.152"
-        android:onClick="onCheckbox1Clicked"/>
+        app:layout_constraintVertical_bias="0.179" />
 
     <CheckBox
         android:id="@+id/checkBox2"
-        android:layout_width="175dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="@dimen/checkbox_layout_width"
+        android:layout_height="@dimen/checkbox_layout_height"
+        android:layout_marginStart="@dimen/margin"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginEnd="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
         android:text="@string/pres2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.204"
-        android:onClick="onCheckbox2Clicked"/>
+        app:layout_constraintVertical_bias="0.23" />
 
     <CheckBox
         android:id="@+id/checkBox3"
-        android:layout_width="175dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="@dimen/checkbox_layout_width"
+        android:layout_height="@dimen/checkbox_layout_height"
+        android:layout_marginStart="@dimen/margin"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginEnd="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
         android:text="@string/pres3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.255"
-        android:onClick="onCheckbox3Clicked"/>
+        app:layout_constraintVertical_bias="0.283" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="113dp"
-        android:layout_height="113dp"
+        android:layout_width="@dimen/image"
+        android:layout_height="@dimen/image"
         android:layout_marginEnd="39dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.364"
+        app:layout_constraintVertical_bias="0.54"
         app:srcCompat="@drawable/gilbert_stuart_williamstown_portrait_of_george_washington_promo" />
 
     <RadioGroup
-        android:layout_width="206dp"
-        android:layout_height="123dp"
-        app:layout_constraintBottom_toBottomOf="@+id/score"
+        android:id="@+id/radioGroup"
+        android:layout_width="200dp"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.624"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/spinner"
-        app:layout_constraintVertical_bias="0.775">
+        app:layout_constraintVertical_bias="0.856">
 
         <RadioButton
             android:id="@+id/radioButton3"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/radio_width"
+            android:layout_height="@dimen/radio_height"
             android:onClick="radioButton3"
             android:text="Bill Clinton" />
 
         <RadioButton
             android:id="@+id/radioButton2"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/radio_width"
+            android:layout_height="@dimen/radio_height"
             android:onClick="radioButton2"
             android:text="Donald trump" />
 
         <RadioButton
             android:id="@+id/radioButton"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/radio_width"
+            android:layout_height="@dimen/radio_height"
             android:onClick="radioButton1"
             android:text="Barack Obama" />
     </RadioGroup>
@@ -117,25 +116,25 @@
 
     <Switch
         android:id="@+id/switch1"
-        android:layout_width="76dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="@dimen/switch_width"
+        android:layout_height="@dimen/switch_height"
+        android:layout_marginStart="@dimen/margin"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginEnd="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
         android:checked="false"
         android:text="Hint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.372" />
+        app:layout_constraintVertical_bias="0.539" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="354dp"
-        android:layout_height="43dp"
+        android:layout_width="@dimen/text_view_width"
+        android:layout_height="@dimen/text_view_height"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text="Quiz"
@@ -145,83 +144,85 @@
         app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028" />
+        app:layout_constraintVertical_bias="0.041" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="290dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="@dimen/text_view_width"
+        android:layout_height="@dimen/text_view_height"
+        android:layout_marginStart="@dimen/margin"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginEnd="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
         android:text="Past presidents of the U.S"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintHorizontal_bias="0.233"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.116" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/text_view_width"
+        android:layout_height="@dimen/text_view_height"
         android:text="Current President of the U.S"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.323"
+        app:layout_constraintHorizontal_bias="0.383"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.596" />
-
-    <TextView
-        android:id="@+id/checkAnswer"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.516" />
+        app:layout_constraintVertical_bias="0.681" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:background="@drawable/images"
-        android:text="DISPLAY SCORE"
-        android:onClick="calculateScore"
+        android:onClick="checkAnswer"
+        android:text="check answer"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
+        app:layout_constraintVertical_bias="0.377" />
 
     <TextView
         android:id="@+id/checkAns"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/check_width"
+        android:layout_height="@dimen/check_height"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/spinner"
-        app:layout_constraintVertical_bias="0.874" />
-
-    <TextView
-        android:id="@+id/score"
-        android:layout_width="160dp"
-        android:layout_height="57dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintHorizontal_bias="0.653"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
+
+    <TextView
+        android:id="@+id/checkAnswer"
+        android:layout_width="@dimen/check_width"
+        android:layout_height="@dimen/check_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.653"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.377" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/image"
+        android:layout_height="@dimen/image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.791"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.54"
+        app:srcCompat="@drawable/download" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

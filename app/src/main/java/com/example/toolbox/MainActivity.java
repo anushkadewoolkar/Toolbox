@@ -1,7 +1,9 @@
 package com.example.toolbox;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         ImageView view = (ImageView) findViewById(R.id.imageView2);
         view.setImageResource(R.drawable.blank);
+        ImageView view2 = (ImageView) findViewById(R.id.imageView);
+        view2.setImageResource(R.drawable.blank);
         mySwitch = (Switch) findViewById(R.id.switch1);
         mySwitch.setOnCheckedChangeListener(this);
 
@@ -61,7 +65,35 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // On selecting a spinner item
+        ConstraintLayout la = (ConstraintLayout) findViewById(R.id.layout);
         String item = parent.getItemAtPosition(position).toString();
+        if (item.equals("Red"))
+        {
+            la.setBackgroundColor(Color.RED);
+        }
+        else if (item.equals("Orange"))
+        {
+            la.setBackgroundColor(Color.parseColor("#FFA500"));
+        }
+        else if (item.equals("Yellow"))
+        {
+            la.setBackgroundColor(Color.YELLOW);
+        }
+        else if (item.equals("Green"))
+        {
+            la.setBackgroundColor(Color.GREEN);
+        }
+        else if (item.equals("Blue"))
+        {
+            la.setBackgroundColor(Color.BLUE);
+        }
+        else if (item.equals("Purple"))
+        {
+            la.setBackgroundColor(Color.MAGENTA);
+        }
+
+
+
 
         // Showing selected spinner item
         Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
@@ -69,48 +101,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
-    }
-
-    public void onCheckbox1Clicked(View view) {
-        // Is the view now checked?
-        boolean checked = ((CheckBox) view).isChecked();
-        TextView textView = (TextView) findViewById(R.id.checkAnswer);
-        // Check which checkbox was clicked
-        switch (view.getId()) {
-            case R.id.checkBox1:
-                if (checked) {
-                    textView.setText("That's right! Great job!");
-                }
-        }
-
-    }
-
-    public void onCheckbox2Clicked(View view) {
-        // Is the view now checked?
-        boolean checked = ((CheckBox) view).isChecked();
-        TextView textView = (TextView) findViewById(R.id.checkAnswer);
-        // Check which checkbox was clicked
-        switch (view.getId()) {
-            case R.id.checkBox2:
-                if (checked) {
-                    textView.setText("That's wrong! Try again!");
-                }
-        }
-
-    }
-
-    public void onCheckbox3Clicked(View view) {
-        // Is the view now checked?
-        boolean checked = ((CheckBox) view).isChecked();
-        TextView textView = (TextView) findViewById(R.id.checkAnswer);
-        // Check which checkbox was clicked
-        switch (view.getId()) {
-            case R.id.checkBox3:
-                if (checked) {
-                    textView.setText("That's right! Great job!");
-                }
-        }
-
     }
 
     public void radioButton1(View v) {
@@ -152,40 +142,41 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
         boolean isChecked = ((Switch) compoundButton).isChecked();
-        ImageView view = (ImageView) findViewById(R.id.imageView2);
-        if (isChecked)
+        ImageView view = (ImageView) findViewById(R.id.imageView);
+        ImageView view2 = (ImageView) findViewById(R.id.imageView2);
+        if (isChecked) {
             view.setImageResource(R.drawable.gilbert_stuart_williamstown_portrait_of_george_washington_promo);
-        else
+            view2.setImageResource(R.drawable.download);
+        }
+            else {
             view.setImageResource(R.drawable.blank);
-
+            view2.setImageResource(R.drawable.blank);
+        }
     }
 
-    public void calculateScore(View v)
+    public void checkAnswer(View v)
     {
-        TextView text = (TextView) findViewById(R.id.checkAns);
-        TextView textView = (TextView) findViewById(R.id.checkAnswer);
-        TextView score = (TextView) findViewById(R.id.score);
-        if (text.equals("That's right! Great job!") && textView.equals("That's right! Great job!"))
+        CheckBox cb1 = findViewById(R.id.checkBox1);
+        CheckBox cb2 = findViewById(R.id.checkBox2);
+        CheckBox cb3 = findViewById(R.id.checkBox3);
+        boolean check1 = (cb1).isChecked();
+        boolean check2 = (cb2).isChecked();
+        boolean check3 = (cb3).isChecked();
+        TextView text = (TextView) findViewById(R.id.checkAnswer);
+        if (check2)
+            text.setText("That's wrong! Try again!");
+        else if (check1 && check3)
         {
-            score.setText("You got 100%!!!");
+            text.setText("That's right! Great job!");
         }
-        else if (text.equals("That's wrong! Try again!") && textView.equals("That's right! Great job!"))
+        else if (check1)
         {
-            score.setText("You got 50%! Better luck next time!");
+            text.setText("You need to check one more box!");
         }
-        else if (text.equals("That's right! Great job!") && textView.equals("That's wrong! Try again!"))
+        else if (check3)
         {
-            score.setText("You got 50%! Better luck next time!");
+            text.setText("You need to check one more box!");
         }
-        else if (text.equals("That's wrong! Try again!") && textView.equals("That's wrong! Try again!"))
-        {
-            score.setText("You got 0%! Yikes!");
-        }
-        else
-        {
-            score.setText("You didn't answer one or more questions.");
-        }
-
     }
 }
 
