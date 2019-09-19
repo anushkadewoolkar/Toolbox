@@ -5,7 +5,9 @@
     android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/colorLightBlue">
+
 
 
     <CheckBox
@@ -85,21 +87,21 @@
             android:layout_width="@dimen/radio_width"
             android:layout_height="@dimen/radio_height"
             android:onClick="radioButton3"
-            android:text="Bill Clinton" />
+            android:text="@string/pres4" />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="@dimen/radio_width"
             android:layout_height="@dimen/radio_height"
             android:onClick="radioButton2"
-            android:text="Donald trump" />
+            android:text="@string/pres5" />
 
         <RadioButton
             android:id="@+id/radioButton"
             android:layout_width="@dimen/radio_width"
             android:layout_height="@dimen/radio_height"
             android:onClick="radioButton1"
-            android:text="Barack Obama" />
+            android:text="@string/pres6" />
     </RadioGroup>
 
     <Spinner
@@ -200,7 +202,7 @@
         app:layout_constraintHorizontal_bias="0.653"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.989" />
 
     <TextView
         android:id="@+id/checkAnswer"
@@ -215,8 +217,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="@dimen/image"
-        android:layout_height="@dimen/image"
+        android:layout_width="91dp"
+        android:layout_height="107dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.791"

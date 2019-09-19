@@ -44,16 +44,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner.setOnItemSelectedListener(this);
 
         // Spinner Drop down elements
-        List<String> categories = new ArrayList<String>();
-        categories.add("Red");
-        categories.add("Orange");
-        categories.add("Yellow");
-        categories.add("Green");
-        categories.add("Blue");
-        categories.add("Purple");
-
-        // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+        ArrayAdapter<CharSequence> dataAdapter = ArrayAdapter.createFromResource(this,
+                R.array.color_array, android.R.layout.simple_spinner_item);
 
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -67,6 +59,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // On selecting a spinner item
         ConstraintLayout la = (ConstraintLayout) findViewById(R.id.layout);
         String item = parent.getItemAtPosition(position).toString();
+        if (item.equals("default"))
+        {
+            la.setBackgroundColor(Color.parseColor("#4DCDFF"));
+        }
         if (item.equals("Red"))
         {
             la.setBackgroundColor(Color.RED);
@@ -93,14 +89,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
 
 
-
-
         // Showing selected spinner item
         Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
     }
 
     public void onNothingSelected(AdapterView<?> arg0) {
-        // TODO Auto-generated method stub
+        ConstraintLayout la = (ConstraintLayout) findViewById(R.id.layout);
+        la.setBackgroundColor(Color.WHITE);
     }
 
     public void radioButton1(View v) {

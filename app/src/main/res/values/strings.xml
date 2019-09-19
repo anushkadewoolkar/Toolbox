@@ -3,5 +3,17 @@
     <string name="pres1">Abraham Lincoln</string>
     <string name="pres2">Oprah Winfrey</string>
     <string name="pres3">Richard Nixon</string>
+    <string name="pres4">Bill Clinton</string>
+    <string name="pres5">Donald Trump</string>
+    <string name="pres6">Barack Obama</string>
+    <string-array name="color_array">
+        <item>Default</item>
+        <item>Red</item>
+        <item>Orange</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Purple</item>
+    </string-array>
     <string name="spinner_title">Background Color</string>
 </resources>
